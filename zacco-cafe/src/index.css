@@ -1,3 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    /* Zacco Cafe - Deep Forest Green & Cream palette */
+    --background: 45 30% 96%;
+    --foreground: 150 37% 12%;
+
+    --card: 45 25% 94%;
+    --card-foreground: 150 37% 12%;
+
+    --popover: 45 30% 96%;
+    --popover-foreground: 150 37% 12%;
+
+    --primary: 150 37% 17%;
+    --primary-foreground: 45 30% 92%;
+
+    --secondary: 45 20% 88%;
+    --secondary-foreground: 150 37% 17%;
+
+    --muted: 45 15% 90%;
+    --muted-foreground: 150 20% 40%;
+
+    --accent: 35 60% 70%;
+    --accent-foreground: 150 37% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 150 15% 80%;
+    --input: 150 15% 85%;
+    --ring: 150 37% 17%;
+
+    --radius: 0.75rem;
+
+    /* Custom Zacco tokens */
+    --cream: 45 30% 92%;
+    --cream-dark: 40 25% 85%;
+    --forest: 150 37% 17%;
+    --forest-light: 150 30% 25%;
+    --forest-dark: 150 40% 12%;
+    --gold: 35 60% 55%;
+    --gold-light: 35 70% 75%;
+
+    --sidebar-background: 150 37% 17%;
+    --sidebar-foreground: 45 30% 92%;
+    --sidebar-primary: 45 30% 92%;
+    --sidebar-primary-foreground: 150 37% 17%;
+    --sidebar-accent: 150 30% 25%;
+    --sidebar-accent-foreground: 45 30% 92%;
+    --sidebar-border: 150 30% 25%;
+    --sidebar-ring: 35 60% 55%;
+  }
+
+  .dark {
+    --background: 150 40% 8%;
+    --foreground: 45 30% 92%;
+
+    --card: 150 37% 12%;
+    --card-foreground: 45 30% 92%;
+
+    --popover: 150 37% 12%;
+    --popover-foreground: 45 30% 92%;
+
+    --primary: 45 30% 92%;
+    --primary-foreground: 150 37% 17%;
+
+    --secondary: 150 30% 20%;
+    --secondary-foreground: 45 30% 92%;
+
+    --muted: 150 30% 18%;
+    --muted-foreground: 45 20% 70%;
+
+    --accent: 35 60% 55%;
+    --accent-foreground: 150 37% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 150 30% 25%;
+    --input: 150 30% 25%;
+    --ring: 45 30% 92%;
+
+    --sidebar-background: 150 40% 6%;
+    --sidebar-foreground: 45 30% 92%;
+    --sidebar-primary: 45 30% 92%;
+    --sidebar-primary-foreground: 150 37% 17%;
+    --sidebar-accent: 150 30% 15%;
+    --sidebar-accent-foreground: 45 30% 92%;
+    --sidebar-border: 150 30% 18%;
+    --sidebar-ring: 35 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-forest via-forest-light to-forest bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--forest)) 0%,
+      hsl(var(--forest-light)) 50%,
+      hsl(var(--forest)) 100%
+    );
+  }
+
+  .bg-gradient-card {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--cream)) 0%,
+      hsl(var(--cream-dark)) 100%
+    );
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md bg-cream/80 border border-border/50 shadow-lg;
+  }
+
+  .menu-card-hover {
+    @apply transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}

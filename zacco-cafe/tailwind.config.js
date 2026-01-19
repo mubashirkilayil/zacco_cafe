@@ -4,6 +4,39 @@ export default {
   theme: {
     extend: {
       colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
         forest: {
           DEFAULT: "#0B3B2E",
           light: "#145743",
@@ -17,14 +50,6 @@ export default {
           DEFAULT: "#D4AF37",
           light: "#E2C766",
         },
-        primary: {
-          DEFAULT: "#0B3B2E",
-          foreground: "#F5EBDD",
-        },
-        secondary: {
-          DEFAULT: "#F5EBDD",
-          foreground: "#0B3B2E",
-        },
       },
       boxShadow: {
         elegant: "0 10px 30px rgba(0,0,0,0.18)",
@@ -33,6 +58,11 @@ export default {
       },
       fontFamily: {
         serif: ["ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"],
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
