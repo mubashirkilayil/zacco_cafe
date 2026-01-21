@@ -12,7 +12,7 @@ const navLinks = [
   { name: "Contact", path: "/#contact" },
 ];
 
-export const Navbar = () => {
+ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
@@ -97,3 +97,4 @@ export const Navbar = () => {
     </nav>
   );
 };
+export default Navbar;

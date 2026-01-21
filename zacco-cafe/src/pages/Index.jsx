@@ -1,0 +1,21 @@
+import React from 'react'
+import Navbar  from '../components/Navbar'
+import { Hero } from '../components/Hero'
+import FeaturedMenu from '../components/FeaturedMenu'
+import About from '../components/About'
+import Contact from '../components/Contact'
+import Footer from '../components/Footer'
+const index = () => {
+  return (
+    <div className='min-h-screen'>
+        <Navbar/>
+        <Hero/>
+        <About/>
+        <FeaturedMenu/>
+        <Contact/>
+        <Footer/>
+    </div>
+  )
+}
+
+export default index

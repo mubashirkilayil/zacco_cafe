@@ -1,12 +1,17 @@
 import React from 'react'
-import { Navbar } from './components/Navbar'
-import { Hero } from './components/Hero'
+import { Route, Routes} from 'react-router-dom';
+import Index from './pages/index';
+import PageNotFound from './pages/PageNotFound';
+import Menu from './pages/Menu';
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Hero />
-    </div>
+    <>    
+    <Routes>
+      <Route path='/' element={<Index/>} />
+      <Route path='/menu' element={<Menu/>} />
+      <Route path='*' element={<PageNotFound/>} />
+    </Routes>
+    </> 
   )
 }
 
